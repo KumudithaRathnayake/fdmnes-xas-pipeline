@@ -1,0 +1,42 @@
+{
+  "_comment": "L-edge / molecule-from-XYZ batch config. Both jobs below use the synthetic demo molecules bundled in examples/structures/ (idealized octahedral M(H2O)6, invented coordinates -- not real/published structures) and run out of the box with `generate`. Each job sets 'xyz_file' + 'edge' instead of 'structure_file' -- see fdmnes_pipeline/batch_config.py for the full schema. Duplicate a job and point xyz_file / filout / input_file at your own molecule and FDMNES working directory to adapt this for real use.",
+
+  "protocol": {
+    "radius": 7.5,
+    "energy_range": "-10. 0.1 15. 0.2 35. 0.5 60.",
+    "use_convolution": true
+  },
+
+  "jobs": [
+    {
+      "name": "Demo_Cu_hexaaqua",
+      "xyz_file": "structures/demo_Cu_hexaaqua.xyz",
+      "element": "Cu",
+      "edge": "L23",
+      "absorber_mode": "all",
+      "filout": "examples/outputs/Demo_Cu_hexaaqua/Demo_Cu_hexaaqua_FDM",
+      "input_file": "examples/outputs/Demo_Cu_hexaaqua/Demo_Cu_hexaaqua_input.txt",
+      "protocol_overrides": {
+        "use_green": true,
+        "vmax": -6.0,
+        "use_tddft": true,
+        "use_spinorbit": true
+      }
+    },
+    {
+      "name": "Demo_Zn_hexaaqua",
+      "xyz_file": "structures/demo_Zn_hexaaqua.xyz",
+      "element": "Zn",
+      "edge": "L23",
+      "absorber_mode": "all",
+      "filout": "examples/outputs/Demo_Zn_hexaaqua/Demo_Zn_hexaaqua_FDM",
+      "input_file": "examples/outputs/Demo_Zn_hexaaqua/Demo_Zn_hexaaqua_input.txt",
+      "protocol_overrides": {
+        "energy_range": "-6. 0.05 8. 0.10 20. 0.20 45. 0.50 60. 1.00 60.",
+        "use_tddft": true,
+        "overad": 1.2,
+        "estart": -15.0
+      }
+    }
+  ]
+}

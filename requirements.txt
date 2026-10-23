@@ -1,0 +1,17 @@
+# fdmnes_pipeline itself has zero required dependencies: generating,
+# running and validating FDMNES jobs, and scoring a computed spectrum
+# against an experimental one, all use only the Python standard library.
+#
+# The packages below are optional extras (also declared in pyproject.toml):
+#
+#   matplotlib   -- only needed for `compare`/`compare-batch --plot` and
+#                   the plot_comparison() helper. Everything else (the
+#                   fit itself, --output-csv, --summary-csv) works without it.
+#   pytest       -- only needed to run the test suite (tests/).
+#
+# Install just the package:            pip install -e .
+# Install package + plotting:          pip install -e ".[plot]"
+# Install package + plotting + tests:  pip install -e ".[plot,dev]"
+# Or, to satisfy this file directly:   pip install -r requirements.txt
+matplotlib
+pytest

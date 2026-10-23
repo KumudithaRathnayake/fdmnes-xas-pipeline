@@ -1,0 +1,37 @@
+{
+  "_comment": "K-edge / CIF batch config. 'Demo_Ni_MO6' uses the synthetic structure bundled in examples/structures/ and runs out of the box with `generate` (no real/unpublished data). 'Your_Structure_Here' is a template: duplicate it and point structure_file / filout / input_file at your own CIF and FDMNES working directory. protocol = settings shared by every job unless overridden per-job with 'protocol_overrides'.",
+
+  "protocol": {
+    "radius": 5.0,
+    "energy_range": "-5.0 0.2 10.0 0.5 25.0 1.0 60.0 2.0 100.0",
+    "use_green": false,
+    "use_pbe96": false,
+    "use_scf": false,
+    "use_quadrupole": false,
+    "use_convolution": true
+  },
+
+  "jobs": [
+    {
+      "name": "Demo_Ni_MO6",
+      "structure_file": "examples/structures/demo_MO6.cif",
+      "element": "Ni",
+      "absorber_mode": "all",
+      "absorber_index": 1,
+      "filout": "examples/outputs/Demo_Ni_MO6/Demo_Ni_MO6_FDM",
+      "input_file": "examples/outputs/Demo_Ni_MO6/Demo_Ni_MO6_input.txt"
+    },
+    {
+      "name": "Your_Structure_Here",
+      "structure_file": "/path/to/your/structure.cif",
+      "element": "Ni",
+      "absorber_mode": "all",
+      "absorber_index": 1,
+      "filout": "/path/to/your/fdmnes_run/out/Your_Structure_Here_FDM",
+      "input_file": "/path/to/your/fdmnes_run/out/Your_Structure_Here_input.txt",
+      "protocol_overrides": {
+        "radius": 7.5
+      }
+    }
+  ]
+}

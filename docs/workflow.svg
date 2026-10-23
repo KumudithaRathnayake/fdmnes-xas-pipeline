@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 260" width="980" height="260" font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="980" height="260" fill="#ffffff"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <!-- Step boxes -->
+  <!-- 1: Structure -->
+  <rect x="10" y="80" width="150" height="100" rx="10" fill="#eef3fb" stroke="#3a6ea5" stroke-width="1.5"/>
+  <text x="85" y="118" text-anchor="middle" font-size="13" font-weight="600" fill="#1a3a5c">Structure</text>
+  <text x="85" y="138" text-anchor="middle" font-size="11" fill="#1a3a5c">.cif (K-edge)</text>
+  <text x="85" y="154" text-anchor="middle" font-size="11" fill="#1a3a5c">or .xyz (L-edge)</text>
+
+  <!-- 2: generate -->
+  <rect x="195" y="80" width="150" height="100" rx="10" fill="#eef7f0" stroke="#3a8a55" stroke-width="1.5"/>
+  <text x="270" y="112" text-anchor="middle" font-size="13" font-weight="600" fill="#1f4d2e">generate</text>
+  <text x="270" y="132" text-anchor="middle" font-size="11" fill="#1f4d2e">input_generator.py</text>
+  <text x="270" y="148" text-anchor="middle" font-size="11" fill="#1f4d2e">builds the FDMNES</text>
+  <text x="270" y="162" text-anchor="middle" font-size="11" fill="#1f4d2e">input file</text>
+
+  <!-- 3: run -->
+  <rect x="380" y="80" width="150" height="100" rx="10" fill="#fdf3e4" stroke="#b5791f" stroke-width="1.5"/>
+  <text x="455" y="112" text-anchor="middle" font-size="13" font-weight="600" fill="#5c3d0c">run</text>
+  <text x="455" y="132" text-anchor="middle" font-size="11" fill="#5c3d0c">runner.py launches</text>
+  <text x="455" y="148" text-anchor="middle" font-size="11" fill="#5c3d0c">FDMNES itself</text>
+  <text x="455" y="164" text-anchor="middle" font-size="10" fill="#8a6a3a">(not bundled here)</text>
+
+  <!-- 4: validate -->
+  <rect x="565" y="80" width="150" height="100" rx="10" fill="#f6eefb" stroke="#7c3aa5" stroke-width="1.5"/>
+  <text x="640" y="112" text-anchor="middle" font-size="13" font-weight="600" fill="#3f1a5c">validate</text>
+  <text x="640" y="132" text-anchor="middle" font-size="11" fill="#3f1a5c">validation.py checks</text>
+  <text x="640" y="148" text-anchor="middle" font-size="11" fill="#3f1a5c">bav/conv files, flags</text>
+  <text x="640" y="164" text-anchor="middle" font-size="11" fill="#3f1a5c">SUCCESS / FAILED</text>
+
+  <!-- 5: compare -->
+  <rect x="750" y="80" width="150" height="100" rx="10" fill="#fdecee" stroke="#b53a4d" stroke-width="1.5"/>
+  <text x="825" y="112" text-anchor="middle" font-size="13" font-weight="600" fill="#5c1a24">compare</text>
+  <text x="825" y="132" text-anchor="middle" font-size="11" fill="#5c1a24">comparison.py scores</text>
+  <text x="825" y="148" text-anchor="middle" font-size="11" fill="#5c1a24">vs. experiment</text>
+  <text x="825" y="164" text-anchor="middle" font-size="11" fill="#5c1a24">(Pearson r, R-factor)</text>
+
+  <!-- arrows -->
+  <line x1="160" y1="130" x2="193" y2="130" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="345" y1="130" x2="378" y2="130" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="530" y1="130" x2="563" y2="130" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="715" y1="130" x2="748" y2="130" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- bottom labels: CLI subcommands -->
+  <text x="85" y="205" text-anchor="middle" font-size="10" fill="#777777"> </text>
+  <text x="270" y="205" text-anchor="middle" font-size="10" fill="#777777">cli.py generate</text>
+  <text x="455" y="205" text-anchor="middle" font-size="10" fill="#777777">cli.py run</text>
+  <text x="640" y="205" text-anchor="middle" font-size="10" fill="#777777">cli.py validate</text>
+  <text x="825" y="205" text-anchor="middle" font-size="10" fill="#777777">cli.py compare[-batch]</text>
+
+  <text x="490" y="30" text-anchor="middle" font-size="15" font-weight="600" fill="#222222">fdmnes_pipeline workflow</text>
+  <text x="490" y="235" text-anchor="middle" font-size="10" fill="#999999">cli.py pipeline runs generate + run + validate in one step; compare/compare-batch are run separately once a conv file and an experimental spectrum exist</text>
+</svg>

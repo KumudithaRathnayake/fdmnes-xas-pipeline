@@ -1,0 +1,42 @@
+# Python bytecode and caches
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# FDMNES itself is never bundled here -- see README ("Installing FDMNES")
+fdmnes_Win64*/
+fdmnes_linux64*
+*.exe
+
+# FDMNES run outputs, generated locally by `generate`/`run`/`pipeline`
+# -- not part of the published code, and specific to whatever machine
+# ran them
+examples/outputs/
+*_bav.txt
+*_conv.txt
+*_mpi_decompose.txt
+*_scf.txt
+fdmnes_error.txt
+fdmfile.txt
+
+# Unpublished structures, spectra and results -- never committed
+data/
+unpublished/
+
+# Jupyter notebook checkpoints (clear cell outputs before committing the
+# notebook itself; this only catches the autosave folder)
+.ipynb_checkpoints/
+
+# Editor / OS cruft
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

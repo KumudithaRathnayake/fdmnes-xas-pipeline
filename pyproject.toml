@@ -1,0 +1,17 @@
+[project]
+name = "fdmnes-pipeline"
+version = "0.1.0"
+description = "FDMNES input generation, execution, and output validation for the Ni-HHTP / Co-HHTP XANES project"
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest"]
+plot = ["matplotlib"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["fdmnes_pipeline*"]
